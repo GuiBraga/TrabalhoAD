@@ -16,4 +16,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return null;
 	}
 
+	@Override
+	public UsuarioDTO getUsuario(Long id) {
+		System.out.println("ENTROU");
+		return null;
+	}
+
 }
