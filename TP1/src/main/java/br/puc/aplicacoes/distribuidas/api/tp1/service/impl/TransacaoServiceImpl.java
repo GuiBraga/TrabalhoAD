@@ -10,15 +10,17 @@ import br.puc.aplicacoes.distribuidas.api.tp1.service.service.UsuarioService;
 
 @Service
 @EnableScheduling
-public class UsuarioServiceImpl implements UsuarioService {
+public class TransacaoServiceImpl implements UsuarioService {
 
 	@Override
 	public UsuarioDTO salvar(UsuarioDTO usuarioDTO) {
+		System.out.println("ENTROU");
 		return null;
 	}
 
 	@Override
 	public UsuarioDTO getUsuario(Long id) {
+		System.out.println("ENTROU");
 		return null;
 	}
 
