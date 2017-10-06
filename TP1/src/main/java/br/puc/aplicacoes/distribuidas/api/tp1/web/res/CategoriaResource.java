@@ -12,16 +12,17 @@ import br.puc.aplicacoes.distribuidas.api.tp1.service.service.CategoriaService;
 @RequestMapping("/api")
 public class CategoriaResource {
 	
-	private final CategoriaService categoriaService;
+//	private final CategoriaService categoriaService;
 	
 	public CategoriaResource(CategoriaService categoriaService) {
-		this.categoriaService = categoriaService;
+//		this.categoriaService = categoriaService;
 	}
 	
 	@PostMapping("/categorias")
 	public CategoriaDTO createCategoria(@RequestBody CategoriaDTO categoriaDTO){
-		CategoriaDTO result = categoriaService.salvar(categoriaDTO);
-		return result;
+//		CategoriaDTO result = categoriaService.salvar(categoriaDTO);
+//		return result;
+		return null;
 	}
 	
 	

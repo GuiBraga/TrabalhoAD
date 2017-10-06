@@ -12,16 +12,17 @@ import br.puc.aplicacoes.distribuidas.api.tp1.service.service.ContaService;
 @RequestMapping("/api")
 public class ContaResource {
 	
-	private final ContaService contaService;
+//	private final ContaService contaService;
 	
 	public ContaResource(ContaService contaService) {
-		this.contaService = contaService;
+//		this.contaService = contaService;
 	}
 	
 	@PostMapping("/contas")
 	public ContaDTO createContas(@RequestBody ContaDTO contaDTO){
-		ContaDTO result = contaService.salvar(contaDTO);
-		return result;
+//		ContaDTO result = contaService.salvar(contaDTO);
+//		return result;
+		return null;
 	}
 	
 	

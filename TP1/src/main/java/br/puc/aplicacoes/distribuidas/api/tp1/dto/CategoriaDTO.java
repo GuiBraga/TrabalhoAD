@@ -3,27 +3,14 @@ package br.puc.aplicacoes.distribuidas.api.tp1.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-@Entity
-@Table(name = "CATEGORIA")
 public class CategoriaDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@NotNull
-	@Column(name = "COD_CATEGORIA")
 	private Long codCategoria;
 	
-	@NotNull
-	@Column(name = "DESCRICAO")
 	private String descricao;
 	
-	@NotNull
-	@Column(name = "TIPO_TRANSACAO")
 	private String tipoTransacao;
 
 	public Long getCodCategoria() {

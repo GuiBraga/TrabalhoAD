@@ -4,38 +4,20 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-@Entity
-@Table(name = "FATURA")
 public class FaturaDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@NotNull
-	@Column(name = "COD_FATURA")
 	private Long codFatura;
 	
-	@Column(name = "DATA_FECHAMENTO")
 	private LocalDate dataFechamentoFatura;
 	
-	@Column(name = "DATA_PAGAMENTO")
 	private LocalDate dataPagamentoFatura;
 	
-	@Column(name = "VALOR_TOTAL")
 	private double valorTotal;
 	
-	@Column(name = "MES_REFERENCIA")
 	private int mesReferencia;
 	
-	@NotNull
-	@ManyToOne
-	@JoinColumn(name = "COD_CARTAO_CREDITO")
 	private CartaoCreditoDTO cartaoCredito;
 
 	public Long getCodFatura() {

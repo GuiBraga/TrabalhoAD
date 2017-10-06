@@ -12,15 +12,16 @@ import br.puc.aplicacoes.distribuidas.api.tp1.service.service.TransacaoService;
 @RequestMapping("/api")
 public class TransacaoResource {
 	
-	private final TransacaoService transacaoService;
+//	private final TransacaoService transacaoService;
 	
 	public TransacaoResource(TransacaoService transacaoService) {
-		this.transacaoService = transacaoService;
+//		this.transacaoService = transacaoService;
 	}
 	
 	@PostMapping("/transacaos")
 	public TransacaoDTO createTransacao(@RequestBody TransacaoDTO usuario){
-		TransacaoDTO result = transacaoService.salvar(usuario);
-		return result;
+//		TransacaoDTO result = transacaoService.salvar(usuario);
+//		return result;
+		return null;
 	}
 }

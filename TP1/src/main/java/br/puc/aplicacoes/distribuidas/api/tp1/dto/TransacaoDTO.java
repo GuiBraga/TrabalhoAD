@@ -4,44 +4,22 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-@Entity
-@Table(name = "TRANSACAO")
 public class TransacaoDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@NotNull
-	@Column(name = "COD_TRANSACAO")
 	private Long codTransacao;
 	
-	@Column(name = "VALOR")
 	private double valor;
 	
-	@Column(name = "DATA_TRANSACAO")
 	private LocalDate dataTransacao;
 	
-	@Column(name = "DESCRICAO")
 	private String descricao;
 	
-	@Column(name = "TIPO_TRANSACAO")
 	private String tipoTransacao;
 		
-	@ManyToOne
-	@NotNull
-	@JoinColumn(name = "COD_FATURA")
 	private FaturaDTO fatura;
 	
-	@OneToOne
-	@NotNull
-	@JoinColumn(name = "COD_CATEGORIA")
 	private CategoriaDTO categoria;
 
 	public Long getCodTransacao() {

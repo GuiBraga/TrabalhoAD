@@ -12,16 +12,17 @@ import br.puc.aplicacoes.distribuidas.api.tp1.service.service.FaturaService;
 @RequestMapping("/api")
 public class FaturaResource {
 	
-	private final FaturaService faturaService;
+//	private final FaturaService faturaService;
 	
 	public FaturaResource(FaturaService faturaService) {
-		this.faturaService = faturaService;
+//		this.faturaService = faturaService;
 	}
 	
 	@PostMapping("/faturas")
 	public FaturaDTO createFatura(@RequestBody FaturaDTO faturaDTO){
-		FaturaDTO result = faturaService.salvar(faturaDTO);
-		return result;
+//		FaturaDTO result = faturaService.salvar(faturaDTO);
+//		return result;
+		return null;
 	}
 	
 	

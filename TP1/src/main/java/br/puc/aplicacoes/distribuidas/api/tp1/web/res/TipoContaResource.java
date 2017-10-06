@@ -12,16 +12,17 @@ import br.puc.aplicacoes.distribuidas.api.tp1.service.service.TipoContaService;
 @RequestMapping("/api")
 public class TipoContaResource {
 	
-	private final TipoContaService tipoContaService;
+//	private final TipoContaService tipoContaService;
 	
 	public TipoContaResource(TipoContaService tipoContaService) {
-		this.tipoContaService = tipoContaService;
+//		this.tipoContaService = tipoContaService;
 	}
 	
 	@PostMapping("/tipo-contas")
 	public TipoContaDTO createTipoConta(@RequestBody TipoContaDTO tipoContaDTO){
-		TipoContaDTO result = tipoContaService.salvar(tipoContaDTO);
-		return result;
+//		TipoContaDTO result = tipoContaService.salvar(tipoContaDTO);
+//		return result;
+		return null;
 	}
 	
 	

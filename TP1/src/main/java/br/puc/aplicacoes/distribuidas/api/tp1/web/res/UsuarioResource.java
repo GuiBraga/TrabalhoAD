@@ -12,16 +12,17 @@ import br.puc.aplicacoes.distribuidas.api.tp1.service.service.UsuarioService;
 @RequestMapping("/api")
 public class UsuarioResource {
 	
-	private final UsuarioService usuarioService;
+//	private final UsuarioService usuarioService;
 	
 	public UsuarioResource(UsuarioService usuarioService) {
-		this.usuarioService = usuarioService;
+//		this.usuarioService = usuarioService;
 	}
 	
 	@PostMapping("/usuarios")
 	public UsuarioDTO createUsuario(@RequestBody UsuarioDTO usuario){
-		UsuarioDTO result = usuarioService.salvar(usuario);
-		return result;
+//		UsuarioDTO result = usuarioService.salvar(usuario);
+//		return result;
+		return null;
 	}
 	
 	

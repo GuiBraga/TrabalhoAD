@@ -3,34 +3,16 @@ package br.puc.aplicacoes.distribuidas.api.tp1.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-@Entity
-@Table(name = "CARTAO_CREDITO")
 public class CartaoCreditoDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@NotNull
-	@Column(name = "COD_CARTAO_CREDITO")
 	private Long codCartaoCredito;
 
-	@NotNull
-	@Column(name = "LIMITE")
 	private double limite;
 
-	@NotNull
-	@Column(name = "OPERADORA")
 	private String operadora;
 
-	@ManyToOne
-	@NotNull
-	@JoinColumn(name = "COD_CONTA")
 	private ContaDTO conta;
 
 	public Long getCodCartaoCredito() {

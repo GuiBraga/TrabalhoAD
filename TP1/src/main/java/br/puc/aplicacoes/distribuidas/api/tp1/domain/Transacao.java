@@ -1,11 +1,13 @@
 package br.puc.aplicacoes.distribuidas.api.tp1.domain;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -14,9 +16,11 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TRANSACAO")
-public class Transacao implements Serializable{
+public class Transacao{
 	
-	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	
 	@NotNull
 	@Column(name = "COD_TRANSACAO")
