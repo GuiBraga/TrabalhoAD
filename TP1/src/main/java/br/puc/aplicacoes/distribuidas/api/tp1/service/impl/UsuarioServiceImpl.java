@@ -29,6 +29,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public List<UsuarioDTO> getAllUsuarios() {
+		System.out.println("Entrouuuuuuuu");
 		return null;
 	}
 

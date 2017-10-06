@@ -2,35 +2,35 @@ package br.puc.aplicacoes.distribuidas.api.tp1.service.impl;
 
 import java.util.List;
 
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
-import br.puc.aplicacoes.distribuidas.api.tp1.dto.UsuarioDTO;
-import br.puc.aplicacoes.distribuidas.api.tp1.service.service.UsuarioService;
+import br.puc.aplicacoes.distribuidas.api.tp1.dto.TransacaoDTO;
+import br.puc.aplicacoes.distribuidas.api.tp1.service.service.TransacaoService;
 
 @Service
-@EnableScheduling
-public class TransacaoServiceImpl implements UsuarioService {
+public class TransacaoServiceImpl implements TransacaoService {
 
 	@Override
-	public UsuarioDTO salvar(UsuarioDTO usuarioDTO) {
-		System.out.println("ENTROU");
+	public TransacaoDTO salvar(TransacaoDTO transacaoDTO) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public UsuarioDTO getUsuario(Long id) {
-		System.out.println("ENTROU");
+	public TransacaoDTO getTransacao(Long id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public UsuarioDTO alterar(UsuarioDTO UsuarioDTO) {
+	public TransacaoDTO alterar(TransacaoDTO transacaoDTO) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<UsuarioDTO> getAllUsuarios() {
+	public List<TransacaoDTO> getAllTransacoes() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
