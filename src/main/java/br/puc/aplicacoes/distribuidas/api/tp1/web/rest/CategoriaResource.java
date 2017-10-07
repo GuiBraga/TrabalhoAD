@@ -1,4 +1,4 @@
-package br.puc.aplicacoes.distribuidas.api.tp1.web.res;
+package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
