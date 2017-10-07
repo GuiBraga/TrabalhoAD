@@ -1,3 +1,6 @@
 
 TP1/target/classes/META-INF/MANIFEST.MF
 TP1/target/classes/META-INF/maven/com.puc/TP1/pom.properties
+/target/
+target/classes/META-INF/maven/com.puc/TP1/pom.properties
+*.class
