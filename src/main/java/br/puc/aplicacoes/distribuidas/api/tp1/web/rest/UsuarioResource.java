@@ -22,11 +22,10 @@ public class UsuarioResource {
 		this.usuarioService = usuarioService;
 	}
 	
-	@PostMapping("/usuarios")
+	@PostMapping
 	public UsuarioDTO createUsuario(@RequestBody UsuarioDTO usuario){
 //		UsuarioDTO result = usuarioService.salvar(usuario);
 //		return result;
-		System.out.println("FUNFOU!!!!");
 		return null;
 	}
 	

@@ -16,8 +16,6 @@ public class Usuario{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
 	@NotNull
 	@Column(name = "COD_USUARIO")
 	private Long codUsuario;

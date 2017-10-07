@@ -9,7 +9,7 @@ import br.puc.aplicacoes.distribuidas.api.tp1.dto.CategoriaDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.service.service.CategoriaService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/categoria")
 public class CategoriaResource {
 	
 //	private final CategoriaService categoriaService;
@@ -18,7 +18,7 @@ public class CategoriaResource {
 //		this.categoriaService = categoriaService;
 	}
 	
-	@PostMapping("/categorias")
+	@PostMapping
 	public CategoriaDTO createCategoria(@RequestBody CategoriaDTO categoriaDTO){
 //		CategoriaDTO result = categoriaService.salvar(categoriaDTO);
 //		return result;

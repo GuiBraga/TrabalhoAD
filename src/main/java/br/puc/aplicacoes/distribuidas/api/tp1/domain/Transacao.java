@@ -20,8 +20,6 @@ public class Transacao{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
 	@NotNull
 	@Column(name = "COD_TRANSACAO")
 	private Long codTransacao;

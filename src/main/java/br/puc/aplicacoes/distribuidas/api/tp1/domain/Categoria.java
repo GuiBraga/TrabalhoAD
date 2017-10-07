@@ -16,8 +16,6 @@ public class Categoria{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
 	@NotNull
 	@Column(name = "COD_CATEGORIA")
 	private Long codCategoria;

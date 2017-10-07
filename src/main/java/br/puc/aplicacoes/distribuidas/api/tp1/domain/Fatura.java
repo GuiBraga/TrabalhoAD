@@ -19,8 +19,6 @@ public class Fatura{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
 	@NotNull
 	@Column(name = "COD_FATURA")
 	private Long codFatura;

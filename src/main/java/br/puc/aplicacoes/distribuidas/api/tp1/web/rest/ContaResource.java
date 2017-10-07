@@ -9,7 +9,7 @@ import br.puc.aplicacoes.distribuidas.api.tp1.dto.ContaDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.service.service.ContaService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/conta")
 public class ContaResource {
 	
 //	private final ContaService contaService;
@@ -18,7 +18,7 @@ public class ContaResource {
 //		this.contaService = contaService;
 	}
 	
-	@PostMapping("/contas")
+	@PostMapping
 	public ContaDTO createContas(@RequestBody ContaDTO contaDTO){
 //		ContaDTO result = contaService.salvar(contaDTO);
 //		return result;

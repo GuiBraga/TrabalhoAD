@@ -14,7 +14,7 @@ import br.puc.aplicacoes.distribuidas.api.tp1.dto.CartaoCreditoDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.service.service.CartaoCreditoService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/cartao-credito")
 public class CartaoCreditoResource {
 
 	private final CartaoCreditoService cartaoCreditoService;
@@ -30,7 +30,7 @@ public class CartaoCreditoResource {
 	 *            the CartaoCreditoDTO to create
 	 * @return with body the new cartaoCreditoDTO
 	 */
-	@PostMapping("/cartao-creditos")
+	@PostMapping
 	public CartaoCreditoDTO createCartaoCredito(@RequestBody CartaoCreditoDTO cartaoCreditoDTO) {
 		return cartaoCreditoService.salvar(cartaoCreditoDTO);
 	}
@@ -42,7 +42,7 @@ public class CartaoCreditoResource {
 	 *            the id of the cartaoCreditoDTO to retrieve
 	 * @return with body the cartaoCreditoDTO
 	 */
-	@PutMapping("/cartao-creditos")
+	@PutMapping
 	public CartaoCreditoDTO updateCartaoCredito(@RequestBody CartaoCreditoDTO cartaoCreditoDTO) {
 		return cartaoCreditoService.salvar(cartaoCreditoDTO);
 	}
@@ -54,19 +54,18 @@ public class CartaoCreditoResource {
 	 *            the id of the cartaoCreditoDTO to retrieve
 	 * @return with body the cartaoCreditoDTO
 	 */
-	@GetMapping("/cartao-creditos/{id}")
+	@GetMapping("/{id}")
 	public CartaoCreditoDTO getCartaoCredito(@PathVariable Long id) {
+		System.out.println("hello");
 		return cartaoCreditoService.getCartaoCredito(id);
 	}
 
 	/**
-	 * GET /cartao-creditos/
+	 * GET /todos/
 	 *
-	 * @param id
-	 *            the id of the cartaoCreditoDTO to retrieve
-	 * @return with body the cartaoCreditoDTO
+	 * @return all cartaoCreditoDTO
 	 */
-	@GetMapping("/cartao-creditos")
+	@GetMapping("/todos")
 	public List<CartaoCreditoDTO> getAllAlturas() {
 		return cartaoCreditoService.getAllCartaoCreditos();
 	}

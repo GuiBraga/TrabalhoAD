@@ -3,9 +3,12 @@ package br.puc.aplicacoes.distribuidas.api.tp1.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.CartaoCredito;
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.CartaoCreditoDTO;
 
+@Component
 public class ConverterCartaoCredito {
 	private ConverterConta converterConta = new ConverterConta();
 	

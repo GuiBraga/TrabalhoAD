@@ -18,8 +18,6 @@ public class CartaoCredito {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-
 	@NotNull
 	@Column(name = "COD_CARTAO_CREDITO")
 	private Long codCartaoCredito;

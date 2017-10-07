@@ -9,7 +9,7 @@ import br.puc.aplicacoes.distribuidas.api.tp1.dto.FaturaDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.service.service.FaturaService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/fatura")
 public class FaturaResource {
 	
 //	private final FaturaService faturaService;
@@ -18,7 +18,7 @@ public class FaturaResource {
 //		this.faturaService = faturaService;
 	}
 	
-	@PostMapping("/faturas")
+	@PostMapping
 	public FaturaDTO createFatura(@RequestBody FaturaDTO faturaDTO){
 //		FaturaDTO result = faturaService.salvar(faturaDTO);
 //		return result;

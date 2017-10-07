@@ -16,8 +16,6 @@ public class TipoConta{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
 	@NotNull
 	@Column(name = "COD_TIPO_CONTA")
 	private Long codTipoConta;

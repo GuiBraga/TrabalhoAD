@@ -18,8 +18,6 @@ public class Conta{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
 	@NotNull
 	@Column(name = "COD_CONTA")
 	private Long codConta;

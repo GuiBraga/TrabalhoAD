@@ -9,7 +9,7 @@ import br.puc.aplicacoes.distribuidas.api.tp1.dto.TransacaoDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.service.service.TransacaoService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/transacao")
 public class TransacaoResource {
 	
 //	private final TransacaoService transacaoService;
@@ -18,7 +18,7 @@ public class TransacaoResource {
 //		this.transacaoService = transacaoService;
 	}
 	
-	@PostMapping("/transacaos")
+	@PostMapping
 	public TransacaoDTO createTransacao(@RequestBody TransacaoDTO usuario){
 //		TransacaoDTO result = transacaoService.salvar(usuario);
 //		return result;

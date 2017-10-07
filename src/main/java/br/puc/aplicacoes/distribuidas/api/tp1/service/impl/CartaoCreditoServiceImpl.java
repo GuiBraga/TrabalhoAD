@@ -2,6 +2,7 @@ package br.puc.aplicacoes.distribuidas.api.tp1.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
@@ -12,16 +13,13 @@ import br.puc.aplicacoes.distribuidas.api.tp1.repository.CartaoCreditoRepository
 import br.puc.aplicacoes.distribuidas.api.tp1.service.service.CartaoCreditoService;
 
 @Service
-@EnableScheduling
 public class CartaoCreditoServiceImpl implements CartaoCreditoService {
 	
-	private final CartaoCreditoRepository cartaoCreditoRepository;
-	private final ConverterCartaoCredito converterCartaoCredito;
+	@Autowired
+	CartaoCreditoRepository cartaoCreditoRepository;
 	
-	public CartaoCreditoServiceImpl(CartaoCreditoRepository cartaoCreditoRepository, ConverterCartaoCredito converterCartaoCredito){
-		this.cartaoCreditoRepository = cartaoCreditoRepository;
-		this.converterCartaoCredito = converterCartaoCredito;
-	}
+	@Autowired
+	ConverterCartaoCredito converterCartaoCredito;
 
 	@Override
 	public CartaoCreditoDTO salvar(CartaoCreditoDTO cartaoCreditoDTO) {
