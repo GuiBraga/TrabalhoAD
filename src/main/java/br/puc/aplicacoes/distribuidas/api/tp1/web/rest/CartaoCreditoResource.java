@@ -44,7 +44,7 @@ public class CartaoCreditoResource {
 	 */
 	@PutMapping("/cartao-creditos")
 	public CartaoCreditoDTO updateCartaoCredito(@RequestBody CartaoCreditoDTO cartaoCreditoDTO) {
-		return cartaoCreditoService.alterar(cartaoCreditoDTO);
+		return cartaoCreditoService.salvar(cartaoCreditoDTO);
 	}
 
 	/**
