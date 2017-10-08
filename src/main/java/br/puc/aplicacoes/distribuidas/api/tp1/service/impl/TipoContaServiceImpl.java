@@ -28,7 +28,7 @@ public class TipoContaServiceImpl implements TipoContaService {
 	}
 
 	@Override
-	public List<TipoContaDTO> getAllTiposConta() {
+	public List<TipoContaDTO> getAllTipoConta(Long id) {
 		return null;
 	}
 

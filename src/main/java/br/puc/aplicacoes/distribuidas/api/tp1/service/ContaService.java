@@ -12,5 +12,5 @@ public interface ContaService {
 	
 	ContaDTO alterar(ContaDTO contaDTO);
 	
-	List<ContaDTO> getAllContas();
+	List<ContaDTO> getAllContas(Long id);
 }

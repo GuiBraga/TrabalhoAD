@@ -28,7 +28,7 @@ public class FaturaServiceImpl implements FaturaService {
 	}
 
 	@Override
-	public List<FaturaDTO> getAllFaturas() {
+	public List<FaturaDTO> getAllFaturas(Long id) {
 		return null;
 	}
 

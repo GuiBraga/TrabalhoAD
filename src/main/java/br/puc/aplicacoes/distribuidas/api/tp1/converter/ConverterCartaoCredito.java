@@ -49,6 +49,16 @@ public class ConverterCartaoCredito {
 	
 	public List<CartaoCreditoDTO> cartaoCreditoListTOCartaoCreditoDTOList(List<CartaoCredito> cartaoCreditoList){
 		List<CartaoCreditoDTO> cartaoCreditoDTOList = new ArrayList<CartaoCreditoDTO>();
+		cartaoCreditoList.forEach(cartaoCredito -> {
+			CartaoCreditoDTO cartaoCreditoDTO = new CartaoCreditoDTO();
+			cartaoCreditoDTO.setCodCartaoCredito(cartaoCredito.getCodCartaoCredito());
+			cartaoCreditoDTO.setConta(converterConta.contaTOContaDTO(cartaoCredito.getConta()));
+			cartaoCreditoDTO.setLimite(cartaoCredito.getLimite());
+			cartaoCreditoDTO.setOperadora(cartaoCredito.getOperadora());
+			
+			cartaoCreditoDTOList.add(cartaoCreditoDTO);
+			
+		});
 		
 		return cartaoCreditoDTOList;
 	}

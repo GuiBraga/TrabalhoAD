@@ -28,7 +28,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 	}
 
 	@Override
-	public List<CategoriaDTO> getAllCategorias() {
+	public List<CategoriaDTO> getAllCategorias(Long id) {
 		return null;
 	}
 

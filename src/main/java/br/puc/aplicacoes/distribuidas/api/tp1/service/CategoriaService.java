@@ -12,5 +12,5 @@ public interface CategoriaService {
 	
 	CategoriaDTO alterar(CategoriaDTO categoriaDTO);
 	
-	List<CategoriaDTO> getAllCategorias();
+	List<CategoriaDTO> getAllCategorias(Long id);
 }

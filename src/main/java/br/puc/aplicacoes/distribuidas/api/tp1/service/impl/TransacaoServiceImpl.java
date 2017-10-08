@@ -29,7 +29,7 @@ public class TransacaoServiceImpl implements TransacaoService {
 	}
 
 	@Override
-	public List<TransacaoDTO> getAllTransacoes() {
+	public List<TransacaoDTO> getAllTransacoes(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -12,5 +12,5 @@ public interface FaturaService {
 	
 	FaturaDTO alterar(FaturaDTO faturaDTO);
 	
-	List<FaturaDTO> getAllFaturas();
+	List<FaturaDTO> getAllFaturas(Long id);
 }

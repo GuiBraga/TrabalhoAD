@@ -36,9 +36,7 @@ public class UsuarioResource {
 	
 	@GetMapping("{login}/{senha}")
 	public Boolean login(@PathVariable String login, @PathVariable String senha) {
-		usuarioService.getAllUsuarios();
-		System.out.println("FUNFOU!!!!");
-		return Boolean.FALSE;
+		return usuarioService.verificaDadosLogin(login, senha);
 	}
 	
 	

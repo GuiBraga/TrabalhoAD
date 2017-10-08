@@ -15,5 +15,5 @@ public interface TransacaoService {
 	
 	TransacaoDTO alterar(TransacaoDTO transacaoDTO);
 	
-	List<TransacaoDTO> getAllTransacoes();
+	List<TransacaoDTO> getAllTransacoes(Long id);
 }

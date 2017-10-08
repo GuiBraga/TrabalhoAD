@@ -28,7 +28,7 @@ public class ContaServiceImpl implements ContaService {
 	}
 
 	@Override
-	public List<ContaDTO> getAllContas() {
+	public List<ContaDTO> getAllContas(Long id) {
 		return null;
 	}
 

@@ -12,5 +12,5 @@ public interface TipoContaService {
 	
 	TipoContaDTO alterar(TipoContaDTO tipoContaDTO);
 	
-	List<TipoContaDTO> getAllTiposConta();
+	List<TipoContaDTO> getAllTipoConta(Long id);
 }
