@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.Categoria;
 
 
-@SuppressWarnings("unused")
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
 

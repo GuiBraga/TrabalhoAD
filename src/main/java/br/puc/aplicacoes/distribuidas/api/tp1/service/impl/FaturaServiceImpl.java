@@ -6,7 +6,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.FaturaDTO;
-import br.puc.aplicacoes.distribuidas.api.tp1.service.service.FaturaService;
+import br.puc.aplicacoes.distribuidas.api.tp1.service.FaturaService;
 
 @Service
 @EnableScheduling

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.Conta;
 
-@SuppressWarnings("unused")
 @Repository
 public interface ContaRepository extends JpaRepository<Conta, Long>{
 

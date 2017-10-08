@@ -8,6 +8,7 @@ br/puc/aplicacoes/distribuidas/api/tp1/repository/CategoriaRepository.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/service/ContaService.class
 br/puc/aplicacoes/distribuidas/api/tp1/converter/ConverterConta.class
 br/puc/aplicacoes/distribuidas/api/tp1/web/rest/FaturaResource.class
+br/puc/aplicacoes/distribuidas/api/tp1/web/rest/MainResource.class
 br/puc/aplicacoes/distribuidas/api/tp1/domain/CartaoCredito.class
 br/puc/aplicacoes/distribuidas/api/tp1/dto/ContaDTO.class
 br/puc/aplicacoes/distribuidas/api/tp1/dto/FaturaDTO.class
@@ -42,5 +43,4 @@ br/puc/aplicacoes/distribuidas/api/tp1/domain/TipoConta.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/impl/TransacaoServiceImpl.class
 br/puc/aplicacoes/distribuidas/api/tp1/dto/CartaoCreditoDTO.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/impl/CategoriaServiceImpl.class
-br/puc/aplicacoes/distribuidas/api/tp1/web/rest/MainController.class
 br/puc/aplicacoes/distribuidas/api/tp1/repository/TipoContaRepository.class

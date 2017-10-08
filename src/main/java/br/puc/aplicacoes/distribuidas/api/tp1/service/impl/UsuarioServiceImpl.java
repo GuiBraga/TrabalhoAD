@@ -6,7 +6,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.UsuarioDTO;
-import br.puc.aplicacoes.distribuidas.api.tp1.service.service.UsuarioService;
+import br.puc.aplicacoes.distribuidas.api.tp1.service.UsuarioService;
 
 @Service
 @EnableScheduling

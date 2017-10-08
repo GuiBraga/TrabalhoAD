@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.Usuario;
 
-@SuppressWarnings("unused")
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 

@@ -3,14 +3,13 @@ package br.puc.aplicacoes.distribuidas.api.tp1.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
 import br.puc.aplicacoes.distribuidas.api.tp1.converter.ConverterCartaoCredito;
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.CartaoCredito;
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.CartaoCreditoDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.repository.CartaoCreditoRepository;
-import br.puc.aplicacoes.distribuidas.api.tp1.service.service.CartaoCreditoService;
+import br.puc.aplicacoes.distribuidas.api.tp1.service.CartaoCreditoService;
 
 @Service
 public class CartaoCreditoServiceImpl implements CartaoCreditoService {

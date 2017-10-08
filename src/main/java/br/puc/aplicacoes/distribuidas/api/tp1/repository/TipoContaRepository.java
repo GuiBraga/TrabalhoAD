@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.TipoConta;
 
 
-@SuppressWarnings("unused")
 @Repository
 public interface TipoContaRepository extends JpaRepository<TipoConta, Long>{
 

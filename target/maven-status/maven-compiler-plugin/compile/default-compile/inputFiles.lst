@@ -7,7 +7,6 @@
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/converter/ConverterConta.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/web/rest/UsuarioResource.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/web/rest/FaturaResource.java
-/Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/web/rest/MainController.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/dto/FaturaDTO.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/dto/TransacaoDTO.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/repository/CartaoCreditoRepository.java
@@ -22,6 +21,7 @@
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/dto/CategoriaDTO.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/repository/FaturaRepository.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/service/impl/TipoContaServiceImpl.java
+/Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/web/rest/MainResource.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/service/service/CategoriaService.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/Tp1Application.java
 /Users/Apple/Documents/GitHub/TrabalhoAD/src/main/java/br/puc/aplicacoes/distribuidas/api/tp1/repository/UsuarioRepository.java
