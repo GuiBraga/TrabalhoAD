@@ -16,4 +16,6 @@ public interface UsuarioService {
 	UsuarioDTO alterar(UsuarioDTO UsuarioDTO);
 	
 	List<UsuarioDTO> getAllUsuarios();
+
+	Boolean verificaDadosLogin(String login, String senha);
 }

@@ -2,16 +2,22 @@ package br.puc.aplicacoes.distribuidas.api.tp1.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
+import br.puc.aplicacoes.distribuidas.api.tp1.domain.Usuario;
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.UsuarioDTO;
+import br.puc.aplicacoes.distribuidas.api.tp1.repository.UsuarioRepository;
 import br.puc.aplicacoes.distribuidas.api.tp1.service.UsuarioService;
 
 @Service
 @EnableScheduling
 public class UsuarioServiceImpl implements UsuarioService {
 
+	@Autowired
+	UsuarioRepository usuarioRepository;
+	
 	@Override
 	public UsuarioDTO salvar(UsuarioDTO usuarioDTO) {
 		return null;
@@ -29,7 +35,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public List<UsuarioDTO> getAllUsuarios() {
-		System.out.println("Entrouuuuuuuu");
+		return null;
+	}
+
+	@Override
+	public Boolean verificaDadosLogin(String login, String senha) {
+		Usuario user = usuarioRepository.verificaLogin(login, senha);
 		return null;
 	}
 
