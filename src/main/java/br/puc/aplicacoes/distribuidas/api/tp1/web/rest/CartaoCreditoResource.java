@@ -65,9 +65,9 @@ public class CartaoCreditoResource {
 	 *
 	 * @return all cartaoCreditoDTO
 	 */
-	@GetMapping("/todos")
-	public List<CartaoCreditoDTO> getAllAlturas() {
-		return cartaoCreditoService.getAllCartaoCreditos();
+	@GetMapping("/{id}/todos")
+	public List<CartaoCreditoDTO> getAllAlturas(@PathVariable Long idUsuario) {
+		return cartaoCreditoService.getAllCartaoCreditos(idUsuario);
 	}
 
 }

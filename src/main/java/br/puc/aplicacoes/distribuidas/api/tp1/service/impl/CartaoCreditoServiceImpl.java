@@ -32,8 +32,8 @@ public class CartaoCreditoServiceImpl implements CartaoCreditoService {
 	}
 
 	@Override
-	public List<CartaoCreditoDTO> getAllCartaoCreditos() {
-		return  converterCartaoCredito.cartaoCreditoListTOCartaoCreditoDTOList(cartaoCreditoRepository.findAll());
+	public List<CartaoCreditoDTO> getAllCartaoCreditos(Long idUsuario) {
+		return  converterCartaoCredito.cartaoCreditoListTOCartaoCreditoDTOList(cartaoCreditoRepository.listarPorUsuario(idUsuario));
 	}
 
 }

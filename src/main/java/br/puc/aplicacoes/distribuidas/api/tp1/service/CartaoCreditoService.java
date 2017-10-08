@@ -13,5 +13,5 @@ public interface CartaoCreditoService {
 	
 	CartaoCreditoDTO getCartaoCredito(Long id);
 	
-	List<CartaoCreditoDTO> getAllCartaoCreditos();
+	List<CartaoCreditoDTO> getAllCartaoCreditos(Long idUsuario);
 }
