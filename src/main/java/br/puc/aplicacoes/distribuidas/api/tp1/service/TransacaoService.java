@@ -11,9 +11,9 @@ public interface TransacaoService {
 
 	TransacaoDTO salvar(TransacaoDTO transacaoDTO);
 	
-	TransacaoDTO getTransacao(Long id);
+	TransacaoDTO getTransacao(Long codigo);
 	
-	TransacaoDTO alterar(TransacaoDTO transacaoDTO);
+	List<TransacaoDTO> getAllTransacoes(Long codigoUsuario);
 	
-	List<TransacaoDTO> getAllTransacoes(Long id);
+	Boolean deletarTransacao(Long codigo);
 }

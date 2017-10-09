@@ -45,6 +45,10 @@ public class Transacao{
 	@NotNull
 	@JoinColumn(name = "COD_CATEGORIA")
 	private Categoria categoria;
+	
+	@ManyToOne
+	@JoinColumn(name = "COD_CONTA")
+	private Conta conta;
 
 	public Long getCodTransacao() {
 		return codTransacao;
@@ -100,6 +104,14 @@ public class Transacao{
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+	
+	public Conta getConta() {
+		return conta;
+	}
+
+	public void setConta(Conta conta) {
+		this.conta = conta;
 	}
 	
 	@Override

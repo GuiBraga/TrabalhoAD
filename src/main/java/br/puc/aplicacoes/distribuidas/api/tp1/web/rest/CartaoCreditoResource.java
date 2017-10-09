@@ -26,7 +26,7 @@ public class CartaoCreditoResource {
 	
 	@DeleteMapping("/{codigo}")
 	public Boolean deletarCartaoCredito(@PathVariable Long codigo) {
-		return Boolean.FALSE;
+		return cartaoCreditoService.deletarCartaoCredito(codigo);
 	}
 
 	@PostMapping

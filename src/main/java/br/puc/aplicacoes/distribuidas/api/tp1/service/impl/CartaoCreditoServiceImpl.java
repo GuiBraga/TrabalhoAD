@@ -28,14 +28,25 @@ public class CartaoCreditoServiceImpl implements CartaoCreditoService {
 	}
 
 	@Override
-	public CartaoCreditoDTO getCartaoCredito(Long id) {
-		return converterCartaoCredito.cartaoCreditoTOCartaoCreditoDTO(cartaoCreditoRepository.findOne(id));
+	public CartaoCreditoDTO getCartaoCredito(Long codigo) {
+		return converterCartaoCredito.cartaoCreditoTOCartaoCreditoDTO(cartaoCreditoRepository.findOne(codigo));
 	}
 
 	@Override
-	public List<CartaoCreditoDTO> getAllCartaoCreditos(Long idUsuario) {
+	public List<CartaoCreditoDTO> getAllCartaoCreditos(Long codigoUsuario) {
 //		return converterCartaoCredito.cartaoCreditoListTOCartaoCreditoDTOList(cartaoCreditoRepository.listarPorUsuario(idUsuario));
 		return new ArrayList<>();
 	}
+	
+	@Override
+	public Boolean deletarCartaoCredito(Long codigo) {
+		try {
+			cartaoCreditoRepository.delete(codigo);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 
 }

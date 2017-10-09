@@ -15,6 +15,7 @@ public class ConverterTransacao {
 
 	private ConverterCategoria converterCategoria = new ConverterCategoria();
 	private ConverterFatura converterFatura = new ConverterFatura();
+	private ConverterConta converterConta = new ConverterConta();
 
 	public Transacao transacaoDTOTOTransacao(TransacaoDTO transacaoDTO) {
 		Transacao transacao = new Transacao();
@@ -25,6 +26,7 @@ public class ConverterTransacao {
 		transacao.setFatura(converterFatura.faturaDTOTOFatura(transacaoDTO.getFatura()));
 		transacao.setTipoTransacao(transacaoDTO.getTipoTransacao());
 		transacao.setValor(transacaoDTO.getValor());
+		transacao.setConta(converterConta.contaDTOTOConta(transacaoDTO.getConta()));
 
 		return transacao;
 	}
@@ -42,7 +44,7 @@ public class ConverterTransacao {
 			transacao.setFatura(converterFatura.faturaDTOTOFatura(transacaoDTO.getFatura()));
 			transacao.setTipoTransacao(transacaoDTO.getTipoTransacao());
 			transacao.setValor(transacaoDTO.getValor());
-
+			transacao.setConta(converterConta.contaDTOTOConta(transacaoDTO.getConta()));
 			transacaoList.add(transacao);
 		});
 
@@ -58,6 +60,7 @@ public class ConverterTransacao {
 		transacaoDTO.setFatura(converterFatura.faturaTOFaturaDTO(transacao.getFatura()));
 		transacaoDTO.setTipoTransacao(transacao.getTipoTransacao());
 		transacaoDTO.setValor(transacao.getValor());
+		transacaoDTO.setConta(converterConta.contaTOContaDTO(transacao.getConta()));
 
 		return transacaoDTO;
 	}
@@ -74,6 +77,7 @@ public class ConverterTransacao {
 			transacaoDTO.setFatura(converterFatura.faturaTOFaturaDTO(transacao.getFatura()));
 			transacaoDTO.setTipoTransacao(transacao.getTipoTransacao());
 			transacaoDTO.setValor(transacao.getValor());
+			transacaoDTO.setConta(converterConta.contaTOContaDTO(transacao.getConta()));
 
 			transacaoDTOList.add(transacaoDTO);
 		});

@@ -8,9 +8,9 @@ public interface ContaService {
 
 	ContaDTO salvar(ContaDTO contaDTO);
 	
-	ContaDTO getConta(Long id);
+	ContaDTO getConta(Long codigo);
 	
-	ContaDTO alterar(ContaDTO contaDTO);
+	List<ContaDTO> getAllContas(Long codigo);
 	
-	List<ContaDTO> getAllContas(Long id);
+	Boolean deletarConta(Long codigo);
 }

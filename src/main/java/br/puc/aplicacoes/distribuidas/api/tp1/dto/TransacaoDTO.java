@@ -21,6 +21,8 @@ public class TransacaoDTO implements Serializable{
 	private FaturaDTO fatura;
 	
 	private CategoriaDTO categoria;
+	
+	private ContaDTO conta;
 
 	public Long getCodTransacao() {
 		return codTransacao;
@@ -76,6 +78,14 @@ public class TransacaoDTO implements Serializable{
 
 	public void setCategoria(CategoriaDTO categoria) {
 		this.categoria = categoria;
+	}
+	
+	public ContaDTO getConta() {
+		return conta;
+	}
+
+	public void setConta(ContaDTO conta) {
+		this.conta = conta;
 	}
 	
 	@Override

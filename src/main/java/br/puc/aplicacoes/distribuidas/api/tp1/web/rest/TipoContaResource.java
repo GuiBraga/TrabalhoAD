@@ -40,13 +40,13 @@ public class TipoContaResource {
 	}
 
 	@GetMapping("/{id}")
-	public TipoContaDTO buscarTipoConta(@PathVariable Long id) {
-		return tipoContaService.getTipoConta(id);
+	public TipoContaDTO buscarTipoConta(@PathVariable Long codigo) {
+		return tipoContaService.getTipoConta(codigo);
 	}
 
 	@GetMapping("/{id}/todos")
-	public List<TipoContaDTO> buscarTodosTipoConta(@PathVariable Long idUsuario) {
-		return tipoContaService.getAllTipoConta(idUsuario);
+	public List<TipoContaDTO> buscarTodosTipoConta(@PathVariable Long codigoUsuario) {
+		return tipoContaService.getAllTipoConta(codigoUsuario);
 	}
 
 }

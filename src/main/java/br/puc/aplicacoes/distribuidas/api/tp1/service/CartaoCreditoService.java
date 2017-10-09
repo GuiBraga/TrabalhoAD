@@ -11,7 +11,9 @@ public interface CartaoCreditoService {
 
 	CartaoCreditoDTO salvar(CartaoCreditoDTO cartaoCreditoDTO);
 	
-	CartaoCreditoDTO getCartaoCredito(Long id);
+	CartaoCreditoDTO getCartaoCredito(Long codigo);
 	
-	List<CartaoCreditoDTO> getAllCartaoCreditos(Long idUsuario);
+	List<CartaoCreditoDTO> getAllCartaoCreditos(Long codigoUsuario);
+	
+	Boolean deletarCartaoCredito(Long codigo);
 }

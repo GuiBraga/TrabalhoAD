@@ -8,9 +8,9 @@ public interface TipoContaService {
 
 	TipoContaDTO salvar(TipoContaDTO tipoContaDTO);
 	
-	TipoContaDTO getTipoConta(Long id);
+	TipoContaDTO getTipoConta(Long codigo);
 	
-	TipoContaDTO alterar(TipoContaDTO tipoContaDTO);
+	List<TipoContaDTO> getAllTipoConta(Long codigoUsuario);
 	
-	List<TipoContaDTO> getAllTipoConta(Long id);
+	Boolean deletarTipoConta(Long codigo);
 }

@@ -8,9 +8,9 @@ public interface FaturaService {
 
 	FaturaDTO salvar(FaturaDTO faturaDTO);
 	
-	FaturaDTO getFatura(Long id);
+	FaturaDTO getFatura(Long codigo);
 	
-	FaturaDTO alterar(FaturaDTO faturaDTO);
+	List<FaturaDTO> getAllFaturas(Long codigoUsuario);
 	
-	List<FaturaDTO> getAllFaturas(Long id);
+	Boolean deletarFatura(Long codigo);
 }
