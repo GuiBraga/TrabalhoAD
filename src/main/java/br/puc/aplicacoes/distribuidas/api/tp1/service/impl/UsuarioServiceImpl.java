@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
+import br.puc.aplicacoes.distribuidas.api.tp1.converter.ConverterUsuario;
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.Usuario;
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.UsuarioDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.repository.UsuarioRepository;
@@ -18,9 +19,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	UsuarioRepository usuarioRepository;
 	
+	@Autowired
+	ConverterUsuario converterUsuario;
+	
 	@Override
 	public UsuarioDTO salvar(UsuarioDTO usuarioDTO) {
-		return null;
+		Usuario usuario = converterUsuario.usuarioDTOTOUsuario(usuarioDTO);
+		return converterUsuario.usuarioTOUsuarioDTO(usuarioRepository.saveAndFlush(usuario));
 	}
 
 	@Override
@@ -40,9 +45,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public Boolean verificaDadosLogin(String email, String senha) {
-//		Usuario user = usuarioRepository.verificaLogin(email, senha);
-//		return user != null;
-		return false;
+		Usuario user = usuarioRepository.verificaLogin(email, senha);
+		if(user == null) 
+		{
+			return Boolean.FALSE;
+		}
+		return Boolean.TRUE;
 	}
 
 }

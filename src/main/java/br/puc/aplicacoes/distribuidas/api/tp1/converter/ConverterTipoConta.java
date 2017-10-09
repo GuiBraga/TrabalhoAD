@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import br.puc.aplicacoes.distribuidas.api.tp1.domain.CartaoCredito;
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.TipoConta;
-import br.puc.aplicacoes.distribuidas.api.tp1.dto.CartaoCreditoDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.TipoContaDTO;
 
 @Component
@@ -15,8 +13,12 @@ public class ConverterTipoConta {
 	
 	public TipoConta tipoContaDTOTOTipoConta(TipoContaDTO tipoContaDTO){
 		TipoConta tipoConta = new TipoConta();
-		
-		tipoConta.setCodTipoConta(tipoContaDTO.getCodTipoConta());
+		Long codTipoConta = tipoContaDTO.getCodTipoConta();
+		if(codTipoConta == null)
+		{
+			codTipoConta = 0L;
+		}
+		tipoConta.setCodTipoConta(codTipoConta);
 		tipoConta.setDescricao(tipoContaDTO.getDescricao());
 		
 		return tipoConta;

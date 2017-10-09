@@ -14,7 +14,13 @@ public class ConverterCartaoCredito {
 	
 	public CartaoCredito cartaoCreditoDTOTOCartaoCredito(CartaoCreditoDTO cartaoCreditoDTO){
 		CartaoCredito cartaoCredito = new CartaoCredito();
-		cartaoCredito.setCodCartaoCredito(cartaoCreditoDTO.getCodCartaoCredito());
+		
+		Long codCartaoCredito = cartaoCreditoDTO.getCodCartaoCredito();
+		if(codCartaoCredito == null)
+		{
+			codCartaoCredito = 0L;
+		}
+		cartaoCredito.setCodCartaoCredito(codCartaoCredito);
 		cartaoCredito.setConta(converterConta.contaDTOTOConta(cartaoCreditoDTO.getConta()));
 		cartaoCredito.setLimite(cartaoCreditoDTO.getLimite());
 		cartaoCredito.setOperadora(cartaoCreditoDTO.getOperadora());

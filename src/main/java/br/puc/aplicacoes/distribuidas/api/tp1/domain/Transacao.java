@@ -37,7 +37,6 @@ public class Transacao{
 	private String tipoTransacao;
 		
 	@ManyToOne
-	@NotNull
 	@JoinColumn(name = "COD_FATURA")
 	private Fatura fatura;
 	

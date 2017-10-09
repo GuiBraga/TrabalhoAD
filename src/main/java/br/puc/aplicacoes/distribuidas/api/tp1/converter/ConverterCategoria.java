@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import br.puc.aplicacoes.distribuidas.api.tp1.domain.CartaoCredito;
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.Categoria;
-import br.puc.aplicacoes.distribuidas.api.tp1.dto.CartaoCreditoDTO;
 import br.puc.aplicacoes.distribuidas.api.tp1.dto.CategoriaDTO;
 
 @Component
@@ -15,9 +13,15 @@ public class ConverterCategoria {
 	
 	public Categoria categoriaDTOTOCategoria(CategoriaDTO categoriaDTO){
 		Categoria categoria = new Categoria();
+		
+		Long codCategoria = categoriaDTO.getCodCategoria();
+		if(codCategoria == null)
+		{
+			codCategoria = 0L;
+		}
+		categoria.setCodCategoria(codCategoria);
 		categoria.setDescricao(categoriaDTO.getDescricao());
 		categoria.setTipoTransacao(categoriaDTO.getTipoTransacao());
-		categoria.setCodCategoria(categoriaDTO.getCodCategoria());
 		return categoria;
 	}
 	

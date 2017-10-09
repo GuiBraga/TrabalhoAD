@@ -25,11 +25,11 @@ public class Conta{
 	@Column(name = "TITULO_CONTA")
 	private String tituloConta;
 	
-	@Column(name = "SALDO_INICIAL")
-	private double saldoInicial;
+	@Column(name = "SALDO_ATUAL")
+	private double saldoAtual;
 	
-	@Column(name = "INCLUIR_TELA_PRINCIPAL")
-	private Boolean incluirTelaPrincipal;
+	@Column(name = "INCLUIR_TELA")
+	private Boolean incluirTela;
 	
 	@ManyToOne
 	@NotNull
@@ -38,7 +38,7 @@ public class Conta{
 	
 	@ManyToOne
 	@NotNull
-	@JoinColumn(name = "TIPO_CONTA")
+	@JoinColumn(name = "COD_TIPO_CONTA")
 	private TipoConta tipoConta;
 
 	public Long getCodConta() {
@@ -57,20 +57,20 @@ public class Conta{
 		this.tituloConta = tituloConta;
 	}
 
-	public double getSaldoInicial() {
-		return saldoInicial;
+	public double getSaldoAtual() {
+		return saldoAtual;
 	}
 
-	public void setSaldoInicial(double saldoInicial) {
-		this.saldoInicial = saldoInicial;
+	public void setSaldoAtual(double saldoAtual) {
+		this.saldoAtual = saldoAtual;
 	}
 
-	public Boolean getIncluirTelaPrincipal() {
-		return incluirTelaPrincipal;
+	public Boolean getIncluirTela() {
+		return incluirTela;
 	}
 
-	public void setIncluirTelaPrincipal(Boolean incluirTelaPrincipal) {
-		this.incluirTelaPrincipal = incluirTelaPrincipal;
+	public void setIncluirTela(Boolean incluirTela) {
+		this.incluirTela = incluirTela;
 	}
 
 	public Usuario getUsuario() {

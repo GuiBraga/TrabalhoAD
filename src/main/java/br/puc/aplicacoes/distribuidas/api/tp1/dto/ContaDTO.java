@@ -11,9 +11,9 @@ public class ContaDTO implements Serializable{
 	
 	private String tituloConta;
 	
-	private double saldoInicial;
+	private double saldoAtual;
 	
-	private Boolean incluirTelaPrincipal;
+	private Boolean incluirTela;
 	
 	private UsuarioDTO usuario;
 	
@@ -35,20 +35,20 @@ public class ContaDTO implements Serializable{
 		this.tituloConta = tituloConta;
 	}
 
-	public double getSaldoInicial() {
-		return saldoInicial;
+	public double getSaldoAtual() {
+		return saldoAtual;
 	}
 
-	public void setSaldoInicial(double saldoInicial) {
-		this.saldoInicial = saldoInicial;
+	public void setSaldoAtual(double saldoAtual) {
+		this.saldoAtual = saldoAtual;
 	}
 
-	public Boolean getIncluirTelaPrincipal() {
-		return incluirTelaPrincipal;
+	public Boolean getIncluirTela() {
+		return incluirTela;
 	}
 
-	public void setIncluirTelaPrincipal(Boolean incluirTelaPrincipal) {
-		this.incluirTelaPrincipal = incluirTelaPrincipal;
+	public void setIncluirTela(Boolean incluirTela) {
+		this.incluirTela = incluirTela;
 	}
 
 	public UsuarioDTO getUsuario() {

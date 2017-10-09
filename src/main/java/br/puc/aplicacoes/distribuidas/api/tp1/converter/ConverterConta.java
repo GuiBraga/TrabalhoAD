@@ -16,9 +16,15 @@ public class ConverterConta {
 
 	public Conta contaDTOTOConta(ContaDTO contaDTO) {
 		Conta conta = new Conta();
-		conta.setCodConta(contaDTO.getCodConta());
-		conta.setIncluirTelaPrincipal(contaDTO.getIncluirTelaPrincipal());
-		conta.setSaldoInicial(contaDTO.getSaldoInicial());
+		
+		Long codConta = contaDTO.getCodConta();
+		if(codConta == null)
+		{
+			codConta = 0L;
+		}
+		conta.setCodConta(codConta);
+		conta.setIncluirTela(contaDTO.getIncluirTela());
+		conta.setSaldoAtual(contaDTO.getSaldoAtual());
 		conta.setTipoConta(converterTipoConta.tipoContaDTOTOTipoConta(contaDTO.getTipoConta()));
 		conta.setTituloConta(contaDTO.getTituloConta());
 		conta.setUsuario(converterUsuario.usuarioDTOTOUsuario(contaDTO.getUsuario()));
@@ -32,8 +38,8 @@ public class ConverterConta {
 		contaDTOList.forEach(contaDTO -> {
 			Conta conta = new Conta();
 			conta.setCodConta(contaDTO.getCodConta());
-			conta.setIncluirTelaPrincipal(contaDTO.getIncluirTelaPrincipal());
-			conta.setSaldoInicial(contaDTO.getSaldoInicial());
+			conta.setIncluirTela(contaDTO.getIncluirTela());
+			conta.setSaldoAtual(contaDTO.getSaldoAtual());
 			conta.setTipoConta(converterTipoConta.tipoContaDTOTOTipoConta(contaDTO.getTipoConta()));
 			conta.setTituloConta(contaDTO.getTituloConta());
 			conta.setUsuario(converterUsuario.usuarioDTOTOUsuario(contaDTO.getUsuario()));
@@ -48,8 +54,8 @@ public class ConverterConta {
 		ContaDTO contaDTO = new ContaDTO();
 
 		contaDTO.setCodConta(conta.getCodConta());
-		contaDTO.setIncluirTelaPrincipal(conta.getIncluirTelaPrincipal());
-		contaDTO.setSaldoInicial(conta.getSaldoInicial());
+		contaDTO.setIncluirTela(conta.getIncluirTela());
+		contaDTO.setSaldoAtual(conta.getSaldoAtual());
 		contaDTO.setTipoConta(converterTipoConta.tipoContaTOTipoContaDTO(conta.getTipoConta()));
 		contaDTO.setTituloConta(conta.getTituloConta());
 		contaDTO.setUsuario(converterUsuario.usuarioTOUsuarioDTO(conta.getUsuario()));
@@ -63,8 +69,8 @@ public class ConverterConta {
 		contaList.forEach(conta -> {
 			ContaDTO contaDTO = new ContaDTO();
 			contaDTO.setCodConta(conta.getCodConta());
-			contaDTO.setIncluirTelaPrincipal(conta.getIncluirTelaPrincipal());
-			contaDTO.setSaldoInicial(conta.getSaldoInicial());
+			contaDTO.setIncluirTela(conta.getIncluirTela());
+			contaDTO.setSaldoAtual(conta.getSaldoAtual());
 			contaDTO.setTipoConta(converterTipoConta.tipoContaTOTipoContaDTO(conta.getTipoConta()));
 			contaDTO.setTituloConta(contaDTO.getTituloConta());
 			contaDTO.setUsuario(converterUsuario.usuarioTOUsuarioDTO(conta.getUsuario()));
