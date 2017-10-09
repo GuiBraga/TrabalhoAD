@@ -34,37 +34,18 @@ public class ContaResource {
 		return contaService.salvar(contaDTO);
 	}
 
-	/**
-	 * GET /conta/ : update the Conta.
-	 *
-	 * @param id
-	 *            the id of the ContaDTO to retrieve
-	 * @return with body the ContaDTO
-	 */
 	@PutMapping
 	public ContaDTO updateConta(@RequestBody ContaDTO contaDTO) {
 		return contaService.salvar(contaDTO);
 	}
 
-	/**
-	 * GET /conta/:id : get the "id" Conta.
-	 *
-	 * @param id
-	 *            the id of the ContaDTO to retrieve
-	 * @return with body the ContaDTO
-	 */
 	@GetMapping("/{id}")
 	public ContaDTO getConta(@PathVariable Long id) {
 		return contaService.getConta(id);
 	}
 
-	/**
-	 * GET /todos/
-	 *
-	 * @return all ContaDTO
-	 */
-	@GetMapping("/{id}/todas")
-	public List<ContaDTO> getAllConta(@PathVariable Long idUsuario) {
-		return contaService.getAllContas(idUsuario);
+	@GetMapping("/{codUsuario}/todas")
+	public List<ContaDTO> getAllConta(@PathVariable Long codUsuario) {
+		return contaService.getAllContas(codUsuario);
 	}
 }
