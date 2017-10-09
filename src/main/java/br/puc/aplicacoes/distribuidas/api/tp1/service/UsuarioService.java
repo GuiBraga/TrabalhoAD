@@ -17,5 +17,5 @@ public interface UsuarioService {
 	
 	List<UsuarioDTO> getAllUsuarios();
 
-	Boolean verificaDadosLogin(String login, String senha);
+	Boolean verificaDadosLogin(String email, String senha);
 }

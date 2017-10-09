@@ -10,7 +10,7 @@ import br.puc.aplicacoes.distribuidas.api.tp1.domain.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
-	@Query("Select u from Usuario u where u.nomeUsuario = (:login) and u.senhaUsuario = (:senha) ")
-	Usuario verificaLogin(@Param("login")String login, @Param("senha")String senha);
+//	@Query("Select u from Usuario u where u.emailUsuario = (:email) and u.senhaUsuario = (:senha) ")
+//	Usuario verificaLogin(@Param("email")String email, @Param("senha")String senha);
 
 }

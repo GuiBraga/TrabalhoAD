@@ -39,9 +39,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public Boolean verificaDadosLogin(String login, String senha) {
-		Usuario user = usuarioRepository.verificaLogin(login, senha);
-		return null;
+	public Boolean verificaDadosLogin(String email, String senha) {
+//		Usuario user = usuarioRepository.verificaLogin(email, senha);
+//		return user != null;
+		return false;
 	}
 
 }

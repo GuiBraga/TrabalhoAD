@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,20 +24,20 @@ public class UsuarioResource {
 	}
 	
 	@PostMapping
-	public UsuarioDTO createUsuario(@RequestBody UsuarioDTO usuario){
+	public UsuarioDTO criarUsuario(@RequestBody UsuarioDTO usuario){
 		UsuarioDTO result = usuarioService.salvar(usuario);
 		return result;
 	}
 	
-	@PostMapping
-	public UsuarioDTO updateUsuario(@RequestBody UsuarioDTO usuario){
+	@PutMapping
+	public UsuarioDTO alterarUsuario(@RequestBody UsuarioDTO usuario){
 		UsuarioDTO result = usuarioService.salvar(usuario);
 		return result;
 	}
 	
-	@GetMapping("{login}/{senha}")
-	public Boolean login(@PathVariable String login, @PathVariable String senha) {
-		return usuarioService.verificaDadosLogin(login, senha);
+	@GetMapping("{email}/{senha}")
+	public Boolean realizarlogin(@PathVariable String email, @PathVariable String senha) {
+		return usuarioService.verificaDadosLogin(email, senha);
 	}
 	
 	

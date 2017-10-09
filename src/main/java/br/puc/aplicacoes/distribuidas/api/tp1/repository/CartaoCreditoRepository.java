@@ -12,7 +12,7 @@ import br.puc.aplicacoes.distribuidas.api.tp1.domain.CartaoCredito;
 @Repository
 public interface CartaoCreditoRepository extends JpaRepository<CartaoCredito, Long>{
 	
-	@Query("Select cc from CartaoCredito cc inner join Conta c on c.codConta = cc.CodConta and c.codUsuario = (:idUsuario) ")
-	List<CartaoCredito> listarPorUsuario(@Param("idUsuario") Long idUsuario);
+//	@Query("Select cc from CartaoCredito cc inner join Conta c on c.codConta = cc.CodConta and c.codUsuario = (:idUsuario) ")
+//	List<CartaoCredito> listarPorUsuario(@Param("idUsuario") Long idUsuario);
 
 }

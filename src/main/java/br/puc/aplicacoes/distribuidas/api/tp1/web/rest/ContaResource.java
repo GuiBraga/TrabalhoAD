@@ -2,6 +2,7 @@ package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,13 +24,11 @@ public class ContaResource {
 		this.contaService = contaService;
 	}
 
-	/**
-	 * POST /conta : Create a new Conta.
-	 *
-	 * @param contaDTO
-	 *            the ContaDTO to create
-	 * @return with body the new ContaDTO
-	 */
+	@DeleteMapping("/{codigo}")
+	public Boolean deletarConta(@PathVariable Long codigo) {
+		return Boolean.FALSE;
+	}
+	
 	@PostMapping
 	public ContaDTO createConta(@RequestBody ContaDTO contaDTO) {
 		return contaService.salvar(contaDTO);
@@ -56,7 +55,6 @@ public class ContaResource {
 	 */
 	@GetMapping("/{id}")
 	public ContaDTO getConta(@PathVariable Long id) {
-		System.out.println("hello");
 		return contaService.getConta(id);
 	}
 
@@ -65,7 +63,7 @@ public class ContaResource {
 	 *
 	 * @return all ContaDTO
 	 */
-	@GetMapping("/{id}/todos")
+	@GetMapping("/{id}/todas")
 	public List<ContaDTO> getAllConta(@PathVariable Long idUsuario) {
 		return contaService.getAllContas(idUsuario);
 	}

@@ -2,6 +2,7 @@ package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,50 +24,28 @@ public class TransacaoResource {
 		this.transacaoService = transacaoService;
 	}
 
-	/**
-	 * POST /transacaos : Create a new Transacao.
-	 *
-	 * @param TransacaoDTO
-	 *            the TransacaoDTO to create
-	 * @return with body the new TransacaoDTO
-	 */
+	@DeleteMapping("/{codigo}")
+	public Boolean deletarTransacao(@PathVariable Long codigo) {
+		return Boolean.FALSE;
+	}
+	
 	@PostMapping
-	public TransacaoDTO createTransacao(@RequestBody TransacaoDTO transacaoDTO) {
+	public TransacaoDTO criarTransacao(@RequestBody TransacaoDTO transacaoDTO) {
 		return transacaoService.salvar(transacaoDTO);
 	}
 
-	/**
-	 * GET /transacaos/ : update the Transacao.
-	 *
-	 * @param id
-	 *            the id of the TransacaoDTO to retrieve
-	 * @return with body the TransacaoDTO
-	 */
 	@PutMapping
-	public TransacaoDTO updateTransacao(@RequestBody TransacaoDTO transacaoDTO) {
+	public TransacaoDTO alterarTransacao(@RequestBody TransacaoDTO transacaoDTO) {
 		return transacaoService.salvar(transacaoDTO);
 	}
 
-	/**
-	 * GET /transacaos/:id : get the "id" Transacao.
-	 *
-	 * @param id
-	 *            the id of the TransacaoDTO to retrieve
-	 * @return with body the TransacaoDTO
-	 */
 	@GetMapping("/{id}")
-	public TransacaoDTO getTransacao(@PathVariable Long id) {
-		System.out.println("hello");
+	public TransacaoDTO buscarTransacao(@PathVariable Long id) {
 		return transacaoService.getTransacao(id);
 	}
 
-	/**
-	 * GET /todos/
-	 *
-	 * @return all TransacaoDTO
-	 */
-	@GetMapping("/{id}/todos")
-	public List<TransacaoDTO> getAllTransacao(@PathVariable Long idUsuario) {
+	@GetMapping("/{id}/todas")
+	public List<TransacaoDTO> buscarTodasTransacao(@PathVariable Long idUsuario) {
 		return transacaoService.getAllTransacoes(idUsuario);
 	}
 }

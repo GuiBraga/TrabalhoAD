@@ -2,6 +2,7 @@ package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,50 +24,28 @@ public class FaturaResource {
 		this.faturaService = faturaService;
 	}
 
-	/**
-	 * POST /fatura : Create a new Fatura.
-	 *
-	 * @param FaturaDTO
-	 *            the FaturaDTO to create
-	 * @return with body the new FaturaDTO
-	 */
+	@DeleteMapping("/{codigo}")
+	public Boolean deletarFatura(@PathVariable Long codigo) {
+		return Boolean.FALSE;
+	}
+	
 	@PostMapping
-	public FaturaDTO createFatura(@RequestBody FaturaDTO faturaDTO) {
+	public FaturaDTO criarFatura(@RequestBody FaturaDTO faturaDTO) {
 		return faturaService.salvar(faturaDTO);
 	}
 
-	/**
-	 * GET /fatura/ : update the Fatura.
-	 *
-	 * @param id
-	 *            the id of the FaturaDTO to retrieve
-	 * @return with body the FaturaDTO
-	 */
 	@PutMapping
-	public FaturaDTO updateFatura(@RequestBody FaturaDTO faturaDTO) {
+	public FaturaDTO alterarFatura(@RequestBody FaturaDTO faturaDTO) {
 		return faturaService.salvar(faturaDTO);
 	}
 
-	/**
-	 * GET /fatura/:id : get the "id" Fatura.
-	 *
-	 * @param id
-	 *            the id of the FaturaDTO to retrieve
-	 * @return with body the FaturaDTO
-	 */
 	@GetMapping("/{id}")
-	public FaturaDTO getFatura(@PathVariable Long id) {
-		System.out.println("hello");
+	public FaturaDTO buscarFatura(@PathVariable Long id) {
 		return faturaService.getFatura(id);
 	}
 
-	/**
-	 * GET /todos/
-	 *
-	 * @return all FaturaDTO
-	 */
-	@GetMapping("/{id}/todos")
-	public List<FaturaDTO> getAllFatura(@PathVariable Long idUsuario) {
+	@GetMapping("/{id}/todas")
+	public List<FaturaDTO> buscarTodasFatura(@PathVariable Long idUsuario) {
 		return faturaService.getAllFaturas(idUsuario);
 	}
 
