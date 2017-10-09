@@ -13,8 +13,6 @@ public class ContaDTO implements Serializable{
 	
 	private double saldoAtual;
 	
-	private Boolean incluirTela;
-	
 	private UsuarioDTO usuario;
 	
 	private TipoContaDTO tipoConta;
@@ -41,14 +39,6 @@ public class ContaDTO implements Serializable{
 
 	public void setSaldoAtual(double saldoAtual) {
 		this.saldoAtual = saldoAtual;
-	}
-
-	public Boolean getIncluirTela() {
-		return incluirTela;
-	}
-
-	public void setIncluirTela(Boolean incluirTela) {
-		this.incluirTela = incluirTela;
 	}
 
 	public UsuarioDTO getUsuario() {

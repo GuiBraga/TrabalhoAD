@@ -28,9 +28,6 @@ public class Conta{
 	@Column(name = "SALDO_ATUAL")
 	private double saldoAtual;
 	
-	@Column(name = "INCLUIR_TELA")
-	private Boolean incluirTela;
-	
 	@ManyToOne
 	@NotNull
 	@JoinColumn(name = "COD_USUARIO")
@@ -63,14 +60,6 @@ public class Conta{
 
 	public void setSaldoAtual(double saldoAtual) {
 		this.saldoAtual = saldoAtual;
-	}
-
-	public Boolean getIncluirTela() {
-		return incluirTela;
-	}
-
-	public void setIncluirTela(Boolean incluirTela) {
-		this.incluirTela = incluirTela;
 	}
 
 	public Usuario getUsuario() {
