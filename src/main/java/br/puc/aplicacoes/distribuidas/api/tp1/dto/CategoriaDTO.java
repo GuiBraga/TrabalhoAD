@@ -12,6 +12,8 @@ public class CategoriaDTO implements Serializable{
 	private String descricao;
 	
 	private String tipoTransacao;
+	
+	private UsuarioDTO usuario;
 
 	public Long getCodCategoria() {
 		return codCategoria;
@@ -36,6 +38,15 @@ public class CategoriaDTO implements Serializable{
 	public void setTipoTransacao(String tipoTransacao) {
 		this.tipoTransacao = tipoTransacao;
 	}
+	
+	public UsuarioDTO getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioDTO usuario) {
+		this.usuario = usuario;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hashCode(getCodCategoria());

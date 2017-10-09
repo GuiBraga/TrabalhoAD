@@ -10,7 +10,7 @@ public interface ContaService {
 	
 	ContaDTO getConta(Long codigo);
 	
-	List<ContaDTO> getAllContas(Long codigo);
+	List<ContaDTO> getAllContas(Long codUsuario);
 	
 	Boolean deletarConta(Long codigo);
 }

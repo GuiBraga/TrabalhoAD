@@ -10,6 +10,8 @@ public class TipoContaDTO implements Serializable{
 	private Long codTipoConta;
 	
 	private String descricao;
+	
+	private UsuarioDTO usuario;
 
 	public Long getCodTipoConta() {
 		return codTipoConta;
@@ -26,7 +28,15 @@ public class TipoContaDTO implements Serializable{
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
+	public UsuarioDTO getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioDTO usuario) {
+		this.usuario = usuario;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hashCode(getCodTipoConta());

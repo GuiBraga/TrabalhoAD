@@ -1,6 +1,5 @@
 package br.puc.aplicacoes.distribuidas.api.tp1.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +32,8 @@ public class CartaoCreditoServiceImpl implements CartaoCreditoService {
 	}
 
 	@Override
-	public List<CartaoCreditoDTO> getAllCartaoCreditos(Long codigoUsuario) {
-//		return converterCartaoCredito.cartaoCreditoListTOCartaoCreditoDTOList(cartaoCreditoRepository.listarPorUsuario(idUsuario));
-		return new ArrayList<>();
+	public List<CartaoCreditoDTO> getAllCartaoCreditos(Long codUsuario) {
+		return converterCartaoCredito.cartaoCreditoListTOCartaoCreditoDTOList(cartaoCreditoRepository.listarPorUsuario(codUsuario));
 	}
 	
 	@Override

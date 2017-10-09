@@ -10,7 +10,7 @@ public interface FaturaService {
 	
 	FaturaDTO getFatura(Long codigo);
 	
-	List<FaturaDTO> getAllFaturas(Long codigoUsuario);
+	List<FaturaDTO> getAllFaturas(Long codUsuario);
 	
 	Boolean deletarFatura(Long codigo);
 }

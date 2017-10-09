@@ -39,14 +39,14 @@ public class FaturaResource {
 		return faturaService.salvar(faturaDTO);
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/{codigo}")
 	public FaturaDTO buscarFatura(@PathVariable Long codigo) {
 		return faturaService.getFatura(codigo);
 	}
 
-	@GetMapping("/{id}/todas")
-	public List<FaturaDTO> buscarTodasFatura(@PathVariable Long codigoUsuario) {
-		return faturaService.getAllFaturas(codigoUsuario);
+	@GetMapping("/{codUsuario}/todas")
+	public List<FaturaDTO> buscarTodasFatura(@PathVariable Long codUsuario) {
+		return faturaService.getAllFaturas(codUsuario);
 	}
 
 }

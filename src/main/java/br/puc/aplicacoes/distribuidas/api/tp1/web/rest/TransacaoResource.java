@@ -39,13 +39,13 @@ public class TransacaoResource {
 		return transacaoService.salvar(transacaoDTO);
 	}
 
-	@GetMapping("/{id}")
-	public TransacaoDTO buscarTransacao(@PathVariable Long id) {
-		return transacaoService.getTransacao(id);
+	@GetMapping("/{codigo}")
+	public TransacaoDTO buscarTransacao(@PathVariable Long codigo) {
+		return transacaoService.getTransacao(codigo);
 	}
 
-	@GetMapping("/{id}/todas")
-	public List<TransacaoDTO> buscarTodasTransacao(@PathVariable Long idUsuario) {
-		return transacaoService.getAllTransacoes(idUsuario);
+	@GetMapping("/{codUsuario}/todas")
+	public List<TransacaoDTO> buscarTodasTransacao(@PathVariable Long codUsuario) {
+		return transacaoService.getAllTransacoes(codUsuario);
 	}
 }

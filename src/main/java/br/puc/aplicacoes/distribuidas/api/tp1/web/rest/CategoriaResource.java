@@ -39,13 +39,13 @@ public class CategoriaResource {
 		return categoriaService.salvar(categoriaDTO);
 	}
 
-	@GetMapping("/{id}")
-	public CategoriaDTO buscarCategoria(@PathVariable Long id) {
-		return categoriaService.getCategoria(id);
+	@GetMapping("/{codigo}")
+	public CategoriaDTO buscarCategoria(@PathVariable Long codigo) {
+		return categoriaService.getCategoria(codigo);
 	}
 
-	@GetMapping("/{id}/todas")
-	public List<CategoriaDTO> buscarTodasCategoria(@PathVariable Long idUsuario) {
-		return categoriaService.getAllCategorias(idUsuario);
+	@GetMapping("/{codUsuario}/todas")
+	public List<CategoriaDTO> buscarTodasCategoria(@PathVariable Long codUsuario) {
+		return categoriaService.getAllCategorias(codUsuario);
 	}
 }

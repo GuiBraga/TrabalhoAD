@@ -34,8 +34,8 @@ public class FaturaServiceImpl implements FaturaService {
 	}
 
 	@Override
-	public List<FaturaDTO> getAllFaturas(Long codigoUsuario) {
-		return null;
+	public List<FaturaDTO> getAllFaturas(Long codUsuario) {
+		return converterFatura.faturaListTOFaturaDTOList(faturaRepository.listarPorUsuario(codUsuario));
 	}
 	
 	@Override

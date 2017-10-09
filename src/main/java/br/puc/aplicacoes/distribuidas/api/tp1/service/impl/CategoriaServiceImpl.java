@@ -34,8 +34,8 @@ public class CategoriaServiceImpl implements CategoriaService {
 	}
 
 	@Override
-	public List<CategoriaDTO> getAllCategorias(Long codigo) {
-		return null;
+	public List<CategoriaDTO> getAllCategorias(Long codUsuario) {
+		return converterCategoria.categoriaListTOCategoriaDTOList(categoriaRepository.listarPorUsuario(codUsuario));
 	}
 
 	@Override

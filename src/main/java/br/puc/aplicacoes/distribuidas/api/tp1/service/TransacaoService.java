@@ -13,7 +13,7 @@ public interface TransacaoService {
 	
 	TransacaoDTO getTransacao(Long codigo);
 	
-	List<TransacaoDTO> getAllTransacoes(Long codigoUsuario);
+	List<TransacaoDTO> getAllTransacoes(Long codUsuario);
 	
 	Boolean deletarTransacao(Long codigo);
 }

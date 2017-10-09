@@ -53,9 +53,9 @@ public class ContaResource {
 	 *            the id of the ContaDTO to retrieve
 	 * @return with body the ContaDTO
 	 */
-	@GetMapping("/{id}")
-	public ContaDTO getConta(@PathVariable Long id) {
-		return contaService.getConta(id);
+	@GetMapping("/{codigo}")
+	public ContaDTO getConta(@PathVariable Long codigo) {
+		return contaService.getConta(codigo);
 	}
 
 	/**
@@ -63,8 +63,8 @@ public class ContaResource {
 	 *
 	 * @return all ContaDTO
 	 */
-	@GetMapping("/{id}/todas")
-	public List<ContaDTO> getAllConta(@PathVariable Long idUsuario) {
-		return contaService.getAllContas(idUsuario);
+	@GetMapping("/{codUsuario}/todas")
+	public List<ContaDTO> getAllConta(@PathVariable Long codUsuario) {
+		return contaService.getAllContas(codUsuario);
 	}
 }

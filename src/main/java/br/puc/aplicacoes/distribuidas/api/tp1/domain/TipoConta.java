@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -23,6 +25,11 @@ public class TipoConta{
 	@NotNull
 	@Column(name = "DESCRICAO")
 	private String descricao;
+	
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "COD_USUARIO")
+	private Usuario usuario;
 
 	public Long getCodTipoConta() {
 		return codTipoConta;
@@ -38,6 +45,14 @@ public class TipoConta{
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	@Override

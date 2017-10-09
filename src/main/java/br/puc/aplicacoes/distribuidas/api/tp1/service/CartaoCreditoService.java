@@ -13,7 +13,7 @@ public interface CartaoCreditoService {
 	
 	CartaoCreditoDTO getCartaoCredito(Long codigo);
 	
-	List<CartaoCreditoDTO> getAllCartaoCreditos(Long codigoUsuario);
+	List<CartaoCreditoDTO> getAllCartaoCreditos(Long codUsuario);
 	
 	Boolean deletarCartaoCredito(Long codigo);
 }

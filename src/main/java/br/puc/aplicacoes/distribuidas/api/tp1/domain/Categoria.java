@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -27,7 +29,12 @@ public class Categoria{
 	@NotNull
 	@Column(name = "TIPO_TRANSACAO")
 	private String tipoTransacao;
-
+	
+	@ManyToOne
+	@NotNull
+	@JoinColumn(name = "COD_USUARIO")
+	private Usuario usuario;
+	
 	public Long getCodCategoria() {
 		return codCategoria;
 	}
@@ -51,6 +58,15 @@ public class Categoria{
 	public void setTipoTransacao(String tipoTransacao) {
 		this.tipoTransacao = tipoTransacao;
 	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hashCode(getCodCategoria());

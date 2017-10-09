@@ -10,7 +10,7 @@ public interface TipoContaService {
 	
 	TipoContaDTO getTipoConta(Long codigo);
 	
-	List<TipoContaDTO> getAllTipoConta(Long codigoUsuario);
+	List<TipoContaDTO> getAllTipoConta(Long codUsuario);
 	
 	Boolean deletarTipoConta(Long codigo);
 }

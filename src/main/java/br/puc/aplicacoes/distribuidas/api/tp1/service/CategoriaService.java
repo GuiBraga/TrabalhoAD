@@ -10,7 +10,7 @@ public interface CategoriaService {
 	
 	CategoriaDTO getCategoria(Long id);
 	
-	List<CategoriaDTO> getAllCategorias(Long id);
+	List<CategoriaDTO> getAllCategorias(Long codUsuario);
 	
 	Boolean deletarCategoria(Long id);
 }

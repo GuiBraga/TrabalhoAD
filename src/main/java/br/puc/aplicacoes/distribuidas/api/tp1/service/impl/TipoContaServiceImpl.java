@@ -34,8 +34,8 @@ public class TipoContaServiceImpl implements TipoContaService {
 	}
 
 	@Override
-	public List<TipoContaDTO> getAllTipoConta(Long codigoUsuario) {
-		return null;
+	public List<TipoContaDTO> getAllTipoConta(Long codUsuario) {
+		return converterTipoConta.tipoContaListTOTipoContaDTOList(tipoContaRepository.listarPorUsuario(codUsuario));
 	}
 	
 	@Override
