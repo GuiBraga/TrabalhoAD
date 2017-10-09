@@ -35,7 +35,7 @@ public class ContaServiceImpl implements ContaService {
 
 	@Override
 	public List<ContaDTO> getAllContas(Long codigo) {
-		return null;
+		return converterConta.contaListTOContaDTOList(contaRepository.listarPorUsuario(codigo));
 	}
 
 	@Override
