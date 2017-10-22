@@ -12,6 +12,6 @@ import br.puc.aplicacoes.distribuidas.api.tp1.domain.Conta;
 @Repository
 public interface ContaRepository extends JpaRepository<Conta, Long>{
 
-	@Query("Select c from Conta c where c.usuario.codUsuario = (:idUsuario) ")
+	@Query("SELECT c FROM Conta c WHERE c.usuario.codUsuario = (:idUsuario) ")
 	public List<Conta> listarPorUsuario(@Param("idUsuario") Long idUsuario);
 }

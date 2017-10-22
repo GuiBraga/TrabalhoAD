@@ -3,6 +3,7 @@ package br.puc.aplicacoes.distribuidas.api.tp1.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.Categoria;
@@ -10,6 +11,9 @@ import br.puc.aplicacoes.distribuidas.api.tp1.dto.CategoriaDTO;
 
 @Component
 public class ConverterCategoria {
+	
+	@Autowired
+	ConverterUsuario converterUsuario = new ConverterUsuario();
 	
 	public Categoria categoriaDTOTOCategoria(CategoriaDTO categoriaDTO){
 		Categoria categoria = new Categoria();
@@ -22,6 +26,8 @@ public class ConverterCategoria {
 		categoria.setCodCategoria(codCategoria);
 		categoria.setDescricao(categoriaDTO.getDescricao());
 		categoria.setTipoTransacao(categoriaDTO.getTipoTransacao());
+		categoria.setUsuario(converterUsuario.usuarioDTOTOUsuario(categoriaDTO.getUsuario()));
+
 		return categoria;
 	}
 	
@@ -32,6 +38,8 @@ public class ConverterCategoria {
 			categoria.setDescricao(categoriaDTO.getDescricao());
 			categoria.setTipoTransacao(categoriaDTO.getTipoTransacao());
 			categoria.setCodCategoria(categoriaDTO.getCodCategoria());
+			categoria.setUsuario(converterUsuario.usuarioDTOTOUsuario(categoriaDTO.getUsuario()));
+
 			categoriaList.add(categoria);
 			
 		});
@@ -44,6 +52,8 @@ public class ConverterCategoria {
 		categoriaDTO.setDescricao(categoria.getDescricao());
 		categoriaDTO.setTipoTransacao(categoria.getTipoTransacao());
 		categoriaDTO.setCodCategoria(categoria.getCodCategoria());
+		categoriaDTO.setUsuario(converterUsuario.usuarioTOUsuarioDTO(categoria.getUsuario()));
+
 		return categoriaDTO;
 	}
 	
@@ -54,6 +64,8 @@ public class ConverterCategoria {
 			categoriaDTO.setDescricao(categoria.getDescricao());
 			categoriaDTO.setTipoTransacao(categoria.getTipoTransacao());
 			categoriaDTO.setCodCategoria(categoria.getCodCategoria());
+			categoriaDTO.setUsuario(converterUsuario.usuarioTOUsuarioDTO(categoria.getUsuario()));
+
 			categoriaDTOList.add(categoriaDTO);
 			
 		});
