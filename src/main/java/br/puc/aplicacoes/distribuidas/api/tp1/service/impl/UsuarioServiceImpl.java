@@ -18,10 +18,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
 	UsuarioRepository usuarioRepository;
-	
+
 	@Autowired
 	ConverterUsuario converterUsuario;
-	
+
 	@Override
 	public UsuarioDTO salvar(UsuarioDTO usuarioDTO) {
 		Usuario usuario = converterUsuario.usuarioDTOTOUsuario(usuarioDTO);
@@ -44,13 +44,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public Boolean verificaDadosLogin(String email, String senha) {
-		Usuario user = usuarioRepository.verificaLogin(email, senha);
-		if(user == null) 
-		{
-			return Boolean.FALSE;
-		}
-		return Boolean.TRUE;
+	public UsuarioDTO verificaDadosLogin(String email, String senha) throws Exception {
+		Usuario usuario = usuarioRepository.verificaLogin(email, senha);
+		if (usuario != null)
+			return converterUsuario.usuarioTOUsuarioDTO(usuario);
+		return null;
 	}
 
 }

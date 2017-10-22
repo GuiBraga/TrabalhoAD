@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import br.puc.aplicacoes.distribuidas.api.tp1.domain.Conta;
 
 @Repository
-public interface ContaRepository extends JpaRepository<Conta, Long>{
+public interface ContaRepository extends JpaRepository<Conta, Long> {
 
 	@Query("SELECT c FROM Conta c WHERE c.usuario.codUsuario = (:idUsuario) ")
 	public List<Conta> listarPorUsuario(@Param("idUsuario") Long idUsuario);
