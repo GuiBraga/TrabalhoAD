@@ -26,18 +26,26 @@ public class UsuarioResource {
 	}
 
 	@PostMapping
-	public ResponseEntity<UsuarioDTO> criarUsuario(@RequestBody UsuarioDTO usuario) {
-		UsuarioDTO result = usuarioService.salvar(usuario);
-		if (result != null)
-			return ResponseEntity.status(HttpStatus.OK).body(result);
+	public ResponseEntity<UsuarioDTO> criarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
+		try {
+			UsuarioDTO result = usuarioService.salvar(usuarioDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@PutMapping
-	public ResponseEntity<UsuarioDTO> alterarUsuario(@RequestBody UsuarioDTO usuario) {
-		UsuarioDTO result = usuarioService.salvar(usuario);
-		if (result != null)
-			return ResponseEntity.status(HttpStatus.OK).body(result);
+	public ResponseEntity<UsuarioDTO> alterarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
+		try {
+			UsuarioDTO result = usuarioService.salvar(usuarioDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 

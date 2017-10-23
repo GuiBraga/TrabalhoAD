@@ -2,6 +2,8 @@ package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,28 +27,62 @@ public class FaturaResource {
 	}
 
 	@DeleteMapping("/{codigo}")
-	public Boolean deletarFatura(@PathVariable Long codigo) {
-		return Boolean.FALSE;
+	public ResponseEntity<Boolean> deletarFatura(@PathVariable Long codigo) {
+		try {
+			faturaService.deletarFatura(codigo);
+			return ResponseEntity.status(HttpStatus.OK).body(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(false);
 	}
-	
+
 	@PostMapping
-	public FaturaDTO criarFatura(@RequestBody FaturaDTO faturaDTO) {
-		return faturaService.salvar(faturaDTO);
+	public ResponseEntity<FaturaDTO> criarFatura(@RequestBody FaturaDTO faturaDTO) {
+		try {
+			FaturaDTO result = faturaService.salvar(faturaDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@PutMapping
-	public FaturaDTO alterarFatura(@RequestBody FaturaDTO faturaDTO) {
-		return faturaService.salvar(faturaDTO);
+	public ResponseEntity<FaturaDTO> alterarFatura(@RequestBody FaturaDTO faturaDTO) {
+		try {
+			FaturaDTO result = faturaService.salvar(faturaDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@GetMapping("/{codigo}")
-	public FaturaDTO buscarFatura(@PathVariable Long codigo) {
-		return faturaService.getFatura(codigo);
+	public ResponseEntity<FaturaDTO> buscarFatura(@PathVariable Long codigo) {
+		try {
+			FaturaDTO result = faturaService.getFatura(codigo);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 
 	@GetMapping("/{codUsuario}/todas")
-	public List<FaturaDTO> buscarTodasFatura(@PathVariable Long codUsuario) {
-		return faturaService.getAllFaturas(codUsuario);
+	public ResponseEntity<List<FaturaDTO>> buscarTodasFatura(@PathVariable Long codUsuario) {
+		try {
+			List<FaturaDTO> result = faturaService.getAllFaturas(codUsuario);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 
 }

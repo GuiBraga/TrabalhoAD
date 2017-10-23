@@ -2,6 +2,8 @@ package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,27 +27,61 @@ public class ContaResource {
 	}
 
 	@DeleteMapping("/{codigo}")
-	public Boolean deletarConta(@PathVariable Long codigo) {
-		return Boolean.FALSE;
+	public ResponseEntity<Boolean> deletarConta(@PathVariable Long codigo) {
+		try {
+			contaService.deletarConta(codigo);
+			return ResponseEntity.status(HttpStatus.OK).body(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(false);
 	}
 	
 	@PostMapping
-	public ContaDTO createConta(@RequestBody ContaDTO contaDTO) {
-		return contaService.salvar(contaDTO);
+	public ResponseEntity<ContaDTO> createConta(@RequestBody ContaDTO contaDTO) {
+		try {
+			ContaDTO result = contaService.salvar(contaDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@PutMapping
-	public ContaDTO updateConta(@RequestBody ContaDTO contaDTO) {
-		return contaService.salvar(contaDTO);
+	public ResponseEntity<ContaDTO> updateConta(@RequestBody ContaDTO contaDTO) {
+		try {
+			ContaDTO result = contaService.salvar(contaDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@GetMapping("/{codigo}")
-	public ContaDTO getConta(@PathVariable Long codigo) {
-		return contaService.getConta(codigo);
+	public ResponseEntity<ContaDTO> getConta(@PathVariable Long codigo) {
+		try {
+			ContaDTO result = contaService.getConta(codigo);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 
-	@GetMapping("/{codUsuario}/todas")
-	public List<ContaDTO> getAllConta(@PathVariable Long codUsuario) {
-		return contaService.getAllContas(codUsuario);
+	@GetMapping("/todas/{codUsuario}")
+	public ResponseEntity<List<ContaDTO>> getAllConta(@PathVariable Long codUsuario) {
+		try {
+			List<ContaDTO> result = contaService.getAllContas(codUsuario);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 }

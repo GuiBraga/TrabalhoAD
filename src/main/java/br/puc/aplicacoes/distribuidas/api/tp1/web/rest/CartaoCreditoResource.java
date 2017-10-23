@@ -2,6 +2,8 @@ package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,30 +25,65 @@ public class CartaoCreditoResource {
 	public CartaoCreditoResource(CartaoCreditoService cartaoCreditoService) {
 		this.cartaoCreditoService = cartaoCreditoService;
 	}
-	
+
 	@DeleteMapping("/{codigo}")
-	public Boolean deletarCartaoCredito(@PathVariable Long codigo) {
-		return cartaoCreditoService.deletarCartaoCredito(codigo);
+	public ResponseEntity<Boolean> deletarCartaoCredito(@PathVariable Long codigo) {
+		try {
+			cartaoCreditoService.deletarCartaoCredito(codigo);
+			return ResponseEntity.status(HttpStatus.OK).body(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(false);
+
 	}
 
 	@PostMapping
-	public CartaoCreditoDTO criarCartaoCredito(@RequestBody CartaoCreditoDTO cartaoCreditoDTO) {
-		return cartaoCreditoService.salvar(cartaoCreditoDTO);
+	public ResponseEntity<CartaoCreditoDTO> criarCartaoCredito(@RequestBody CartaoCreditoDTO cartaoCreditoDTO) {
+		try {
+			CartaoCreditoDTO result = cartaoCreditoService.salvar(cartaoCreditoDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
-	
+
 	@PutMapping
-	public CartaoCreditoDTO alterarCartaoCredito(@RequestBody CartaoCreditoDTO cartaoCreditoDTO) {
-		return cartaoCreditoService.salvar(cartaoCreditoDTO);
+	public ResponseEntity<CartaoCreditoDTO> alterarCartaoCredito(@RequestBody CartaoCreditoDTO cartaoCreditoDTO) {
+		try {
+			CartaoCreditoDTO result = cartaoCreditoService.salvar(cartaoCreditoDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@GetMapping("/{codigo}")
-	public CartaoCreditoDTO buscarCartaoCredito(@PathVariable Long codigo) {
-		return cartaoCreditoService.getCartaoCredito(codigo);
+	public ResponseEntity<CartaoCreditoDTO> buscarCartaoCredito(@PathVariable Long codigo) {
+		try {
+			CartaoCreditoDTO result = cartaoCreditoService.getCartaoCredito(codigo);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 
-	@GetMapping("/{codigoUsuario}/todos")
-	public List<CartaoCreditoDTO> buscarTodosCartaoCredito(@PathVariable Long codigoUsuario) {
-		return cartaoCreditoService.getAllCartaoCreditos(codigoUsuario);
+	@GetMapping("/todos/{codigoUsuario}")
+	public ResponseEntity<List<CartaoCreditoDTO>> buscarTodosCartaoCredito(@PathVariable Long codigoUsuario) {
+		try {
+			List<CartaoCreditoDTO> result = cartaoCreditoService.getAllCartaoCreditos(codigoUsuario);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 
 }

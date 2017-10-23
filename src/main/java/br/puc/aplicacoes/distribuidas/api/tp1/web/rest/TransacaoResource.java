@@ -2,6 +2,8 @@ package br.puc.aplicacoes.distribuidas.api.tp1.web.rest;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,27 +27,61 @@ public class TransacaoResource {
 	}
 
 	@DeleteMapping("/{codigo}")
-	public Boolean deletarTransacao(@PathVariable Long codigo) {
-		return Boolean.FALSE;
+	public ResponseEntity<Boolean> deletarTransacao(@PathVariable Long codigo) {
+		try {
+			transacaoService.deletarTransacao(codigo);
+			return ResponseEntity.status(HttpStatus.OK).body(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(false);
 	}
-	
+
 	@PostMapping
-	public TransacaoDTO criarTransacao(@RequestBody TransacaoDTO transacaoDTO) {
-		return transacaoService.salvar(transacaoDTO);
+	public ResponseEntity<TransacaoDTO> criarTransacao(@RequestBody TransacaoDTO transacaoDTO) {
+		try {
+			TransacaoDTO result = transacaoService.salvar(transacaoDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@PutMapping
-	public TransacaoDTO alterarTransacao(@RequestBody TransacaoDTO transacaoDTO) {
-		return transacaoService.salvar(transacaoDTO);
+	public ResponseEntity<TransacaoDTO> alterarTransacao(@RequestBody TransacaoDTO transacaoDTO) {
+		try {
+			TransacaoDTO result = transacaoService.salvar(transacaoDTO);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
 	}
 
 	@GetMapping("/{codigo}")
-	public TransacaoDTO buscarTransacao(@PathVariable Long codigo) {
-		return transacaoService.getTransacao(codigo);
+	public ResponseEntity<TransacaoDTO> buscarTransacao(@PathVariable Long codigo) {
+		try {
+			TransacaoDTO result = transacaoService.getTransacao(codigo);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 
-	@GetMapping("/{codUsuario}/todas")
-	public List<TransacaoDTO> buscarTodasTransacao(@PathVariable Long codUsuario) {
-		return transacaoService.getAllTransacoes(codUsuario);
+	@GetMapping("/todas/{codUsuario}")
+	public ResponseEntity<List<TransacaoDTO>> buscarTodasTransacao(@PathVariable Long codUsuario) {
+		try {
+			List<TransacaoDTO> result = transacaoService.getAllTransacoes(codUsuario);
+			if (result != null)
+				return ResponseEntity.status(HttpStatus.OK).body(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 	}
 }
