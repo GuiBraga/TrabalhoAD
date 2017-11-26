@@ -12,8 +12,8 @@ br/puc/aplicacoes/distribuidas/api/tp1/web/rest/TransacaoResource.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/FaturaService.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/impl/FaturaServiceImpl.class
 br/puc/aplicacoes/distribuidas/api/tp1/repository/ContaRepository.class
-br/puc/aplicacoes/distribuidas/api/tp1/repository/UsuarioRepository.class
 br/puc/aplicacoes/distribuidas/api/tp1/Tp1Application.class
+br/puc/aplicacoes/distribuidas/api/tp1/repository/UsuarioRepository.class
 br/puc/aplicacoes/distribuidas/api/tp1/converter/ConverterCartaoCredito.class
 br/puc/aplicacoes/distribuidas/api/tp1/repository/CartaoCreditoRepository.class
 br/puc/aplicacoes/distribuidas/api/tp1/domain/Usuario.class
@@ -35,12 +35,12 @@ br/puc/aplicacoes/distribuidas/api/tp1/repository/CategoriaRepository.class
 br/puc/aplicacoes/distribuidas/api/tp1/converter/ConverterConta.class
 br/puc/aplicacoes/distribuidas/api/tp1/web/rest/FaturaResource.class
 br/puc/aplicacoes/distribuidas/api/tp1/web/rest/MainResource.class
-br/puc/aplicacoes/distribuidas/api/tp1/domain/CartaoCredito.class
 br/puc/aplicacoes/distribuidas/api/tp1/dto/ContaDTO.class
 br/puc/aplicacoes/distribuidas/api/tp1/web/rest/UsuarioResource.class
+br/puc/aplicacoes/distribuidas/api/tp1/domain/CartaoCredito.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/impl/ContaServiceImpl.class
-br/puc/aplicacoes/distribuidas/api/tp1/domain/Conta.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/TransacaoService.class
+br/puc/aplicacoes/distribuidas/api/tp1/domain/Conta.class
 br/puc/aplicacoes/distribuidas/api/tp1/web/rest/TipoContaResource.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/impl/UsuarioServiceImpl.class
 br/puc/aplicacoes/distribuidas/api/tp1/service/UsuarioService.class
